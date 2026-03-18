@@ -170,8 +170,16 @@ enum Color {
 
          // Software reset
          send(TFTCommands.SWRESET, [1])
+         basic.pause(1)
+         send(TFTCommands.SWRESET, [0])
+         basic.pause(1)
+         send(TFTCommands.SWRESET, [1])
+         basic.pause(120)
+         
          // Exit Sleep mode
          send(TFTCommands.SLPOUT, [1])
+         basic.pause(120)
+         
          // Frame rate control - normal mode
          send(TFTCommands.FRMCTR1, [0x01, 0x2C, 0x2D])
          // Frame rate control - idle mode
