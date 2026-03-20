@@ -198,7 +198,8 @@ enum Color {
          send(TFTCommands.INVOFF, [])
 
          // Memory access control
-         send(TFTCommands.MADCTL, [0xC8])
+        //  send(TFTCommands.MADCTL, [0xC8])
+         send(TFTCommands.MADCTL, [0x08]) //bit3-qufan
 
          // Set 16-bit color mode
          send(TFTCommands.COLMOD, [0x05])
