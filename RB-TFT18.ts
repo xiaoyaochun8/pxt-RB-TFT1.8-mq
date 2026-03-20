@@ -2,44 +2,44 @@
  * Colors
  */
 enum Color {
-   //% block="Black"
-   Black = 0x0000,
-   //% block="Navy"
-   Navy = 0x000F,
-   //% block="DarkGreen"
-   DarkGreen = 0x03E0,
-   //% block="DarkCyan"
-   DarkCyan = 0x03EF,
-   //% block="Maroon"
-   Maroon = 0x7800,
-   //% block="Purple"
-   Purple = 0x780F,
-   //% block="Olive"
-   Olive = 0x7BE0,
-   //% block="LightGrey"
-   LightGrey = 0xC618,
-   //% block="DarkGrey"
-   DarkGrey = 0x7BEF,
-   //% block="Blue"
-   Blue = 0x001F,
-   //% block="Green"
-   Green = 0x07E0,
-   //% block="Cyan"
-   Cyan = 0x07FF,
-   //% block="Red"
-   Red = 0xF800,
-   //% block="Magenta"
-   Magenta = 0xF81F,
-   //% block="Yellow"
-   Yellow = 0xFFE0,
-   //% block="White"
-   White = 0xFFFF,
-   //% block="Orange"
-   Orange = 0xFD20,
-   //% block="GreenYellow"
-   GreenYellow = 0xAFE5,
-   //% block="Pink"
-   Pink = 0xF81F
+    //% block="Black"
+    Black = 0x0000,
+    //% block="White"
+    White = 0xFFFF,
+    //% block="Red"
+    Red = 0x001F,
+    //% block="Green"
+    Green = 0x07E0,
+    //% block="Blue"
+    Blue = 0xF800,
+    //% block="Yellow"
+    Yellow = 0x07FF,
+    //% block="Navy"
+    Navy = 0x000F,
+    //% block="DarkGreen"
+    DarkGreen = 0x03E0,
+    //% block="DarkCyan"
+    DarkCyan = 0x03EF,
+    //% block="Maroon"
+    Maroon = 0x7800,
+    //% block="Purple"
+    Purple = 0x780F,
+    //% block="Olive"
+    Olive = 0x7BE0,
+    //% block="LightGrey"
+    LightGrey = 0xC618,
+    //% block="DarkGrey"
+    DarkGrey = 0x7BEF,
+    //% block="Cyan"
+    Cyan = 0x07FF,
+    //% block="Magenta"
+    Magenta = 0xF81F,
+    //% block="Orange"
+    Orange = 0xFD20,
+    //% block="GreenYellow"
+    GreenYellow = 0xAFE5,
+    //% block="Pink"
+    Pink = 0xF81F
 }
 
 /**
@@ -198,8 +198,8 @@ enum Color {
          send(TFTCommands.INVOFF, [])
 
          // Memory access control
-        //  send(TFTCommands.MADCTL, [0xC8])
-         send(TFTCommands.MADCTL, [0x08]) //bit3-qufan
+         send(TFTCommands.MADCTL, [0xC8])
+         //  send(TFTCommands.MADCTL, [0x08]) //bit3-qufan
 
          // Set 16-bit color mode
          send(TFTCommands.COLMOD, [0x05])
