@@ -15,11 +15,11 @@ enum Color {
     //% block="Yellow"
     Yellow = 0x07FF,
     //% block="Purple"
-    Purple = 0x801F,
+    Purple = 0xF81F,
     //% block="Orange"
     Orange = 0x051F,
     //% block="Pink"
-    Pink = 0xF81F
+    Pink = 0x801F
 }
 
 /**
