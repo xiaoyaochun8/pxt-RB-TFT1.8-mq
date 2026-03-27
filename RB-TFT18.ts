@@ -223,8 +223,8 @@ enum Color {
       * Draw single pixel
       */
      //% block="Draw single pixel at x:%x|y:%y with color:%color"
-     //% x.min=1 x.max=130
-     //% y.min=1 y.max=162
+     //% x.min=1 x.max=128
+     //% y.min=1 y.max=160
      //% weight=90
      export function drawPixel(x: number, y: number, color: Color): void {
          setWindow(x, y, x+1, y+1)
@@ -235,10 +235,10 @@ enum Color {
       * Draw a straight line from one point to another
       */
      //% block="Draw line from x0:%x0|y0:%y0 to x1:%x1|y:%y1 with color:%color"
-     //% x0.min=1 x0.max=130
-     //% y0.min=1 y0.max=162
-     //% x1.min=1 x1.max=130
-     //% y1.min=1 y1.max=162
+     //% x0.min=1 x0.max=128
+     //% y0.min=1 y0.max=160
+     //% x1.min=1 x1.max=128
+     //% y1.min=1 y1.max=160
      //% weight=85
      export function drawLine(x0: number, y0: number, x1: number, y1: number, color: Color): void {
          let xDelta = x1 - x0
@@ -274,8 +274,8 @@ enum Color {
       * Draw rectangle with a given color
       */
      //% block="Draw rectangle at x:%x|y:%y with width:%width|height:%height|color:%color"
-     //% x.min=1 x.max=130
-     //% y.min=1 y.max=162
+     //% x.min=1 x.max=128
+     //% y.min=1 y.max=160
      //% weight=80
      export function drawRectangle(x: number, y: number, width: number, height: number, color: Color): void {
 
@@ -301,8 +301,8 @@ enum Color {
       * Draw circle with a given radius
       */
      //% block="Draw circle at: x:%x|y:%y with radius:%r and color:%color"
-     //% x.min=1 x.max=130
-     //% y.min=1 y.max=162
+     //% x.min=1 x.max=128
+     //% y.min=1 y.max=160
      //% weight=75
      export function drawCircle(x: number, y: number, radius: number, color: Color): void {
         for(let y1 = -radius ; y1 <= 0 ; y1++) {
@@ -322,8 +322,8 @@ enum Color {
       */
       //% block="Show string:%string at x:%x and y:%y with zoom-level:%zoom color:%color and background color:%bgcolor"
       //% weight=70
-      //% x.min=1 x.max=130
-      //% y.min=1 y.max=162
+      //% x.min=1 x.max=128
+      //% y.min=1 y.max=160
       //% zoom.min=1 zoom.max=5
       export function showString(text: string, x: number, y:number, zoom: number, color: Color, bgColor: Color): void {
           let hiColor = (color >> 8) % 256
