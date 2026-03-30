@@ -1,5 +1,5 @@
 // Initialize TFT Display
-RBTFT18.init()
+RBTFT18.init(4)
 
 // Clear screen - replaces whole screen with a black rectangle
 RBTFT18.clearScreen()
