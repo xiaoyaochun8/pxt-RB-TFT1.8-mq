@@ -13,7 +13,7 @@ The display needs to be connected with seven pins to the Micro:bit:
 | GND           | GND           |
 | SCL           | P13           |
 | SDA           | P15           |
-| RS/DC         | P1            |
+| RS/DC         | P8            |
 | RES           | P7            |
 | CS            | P16           |
 | BLK           | 3V            |
