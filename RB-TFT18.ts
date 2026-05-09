@@ -142,7 +142,7 @@ enum Color {
      /*
       * Initial TFT setup
       */
-     //% block="Initialize TFT Display"
+     //% block="tft初始化模块"
      //% weight=100
      export function init(): void {
          // set SPI frequency
@@ -203,10 +203,10 @@ enum Color {
      /*
       * Draw single pixel
       */
-     //% block="Draw single pixel at x:%x|y:%y with color:%color"
+     //% block="tft画点 位置 x:%x|y:%y with color:%color"
      //% x.min=1 x.max=128
      //% y.min=1 y.max=160
-     //% weight=90
+     //% weight=95
      export function drawPixel(x: number, y: number, color: Color): void {
          setWindow(x, y, x+1, y+1)
          send(TFTCommands.RAMWR, [color >> 8, color])
@@ -301,8 +301,8 @@ enum Color {
      /*
       * Display string at given coordinates
       */
-      //% block="Show string:%string at x:%x and y:%y with zoom-level:%zoom color:%color and background color:%bgcolor"
-      //% weight=70
+      //% block="tft显示英文字符 %string 位置 x:%x and y:%y with zoom-level:%zoom color:%color and background color:%bgcolor"
+      //% weight=97
       //% x.min=1 x.max=128
       //% y.min=1 y.max=160
       //% zoom.min=1 zoom.max=5
@@ -370,20 +370,20 @@ enum Color {
           }
       }
 
-     //% block="Clear screen"
-     //% weight=65
+     //% block="tft清空屏幕"
+     //% weight=99
      export function clearScreen(): void {
          drawRectangle(0, 0, TFTWIDTH, TFTHEIGHT, 0)
      }
 
-     //% block="Turn display off"
-     //% weight=60
+     //% block="tft关闭屏幕"
+     //% weight=50
      export function turnOff(): void {
          send(TFTCommands.DISPOFF, [])
      }
 
-     //% block="Turn display on"
-     //% weight=55
+     //% block="tft打开屏幕"
+     //% weight=50
      export function turnOn(): void {
          send(TFTCommands.DISPON, [])
      }
