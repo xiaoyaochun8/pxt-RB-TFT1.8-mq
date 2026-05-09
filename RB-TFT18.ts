@@ -281,7 +281,7 @@ enum Color {
      /*
       * Draw circle with a given radius
       */
-     //% block="oled画实心圆形 位置 x:%x|y:%y with radius:%r and color:%color"
+     //% block="tft画实心圆形 位置 x:%x|y:%y with radius:%r and color:%color"
      //% x.min=1 x.max=128
      //% y.min=1 y.max=160
      //% weight=88
