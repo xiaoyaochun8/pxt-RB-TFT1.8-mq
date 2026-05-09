@@ -215,12 +215,12 @@ enum Color {
      /*
       * Draw a straight line from one point to another
       */
-     //% block="Draw line from x0:%x0|y0:%y0 to x1:%x1|y:%y1 with color:%color"
+     //% block="tft画直线 起点位置 x0:%x0|y0:%y0 终点位置 x1:%x1|y:%y1 颜色 color:%color"
      //% x0.min=1 x0.max=128
      //% y0.min=1 y0.max=160
      //% x1.min=1 x1.max=128
      //% y1.min=1 y1.max=160
-     //% weight=85
+     //% weight=92
      export function drawLine(x0: number, y0: number, x1: number, y1: number, color: Color): void {
          let xDelta = x1 - x0
          let yDelta = y1 - y0
@@ -254,10 +254,10 @@ enum Color {
      /*
       * Draw rectangle with a given color
       */
-     //% block="Draw rectangle at x:%x|y:%y with width:%width|height:%height|color:%color"
+     //% block="tft画实心矩形 位置 x:%x|y:%y with width:%width|height:%height|color:%color"
      //% x.min=1 x.max=128
      //% y.min=1 y.max=160
-     //% weight=80
+     //% weight=90
      export function drawRectangle(x: number, y: number, width: number, height: number, color: Color): void {
 
          // Convert color
@@ -281,10 +281,10 @@ enum Color {
      /*
       * Draw circle with a given radius
       */
-     //% block="Draw circle at: x:%x|y:%y with radius:%r and color:%color"
+     //% block="oled画实心圆形 位置 x:%x|y:%y with radius:%r and color:%color"
      //% x.min=1 x.max=128
      //% y.min=1 y.max=160
-     //% weight=75
+     //% weight=88
      export function drawCircle(x: number, y: number, radius: number, color: Color): void {
         for(let y1 = -radius ; y1 <= 0 ; y1++) {
             for(let x1 = -radius ; x1 <= 0 ; x1++) {
