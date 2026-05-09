@@ -215,7 +215,7 @@ enum Color {
      /*
       * Draw a straight line from one point to another
       */
-     //% block="tft画直线 起点位置 x0:%x0|y0:%y0 终点位置 x1:%x1|y:%y1 颜色 color:%color"
+     //% block="tft画直线 起点位置 x0:%x0|y0:%y0 终点位置 x1:%x1|y1:%y1 颜色 color:%color"
      //% x0.min=1 x0.max=128
      //% y0.min=1 y0.max=160
      //% x1.min=1 x1.max=128
