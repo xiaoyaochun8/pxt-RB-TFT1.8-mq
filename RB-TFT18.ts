@@ -145,6 +145,8 @@ enum Color {
      //% block="tft初始化模块"
      //% weight=100
      export function init(): void {
+         pins.setPull(DigitalPin.P9, PinPullMode.PullUp)
+
          // set SPI frequency
          pins.spiFrequency(32000000)
 
