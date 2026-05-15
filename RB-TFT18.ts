@@ -203,9 +203,9 @@ enum Color {
      /*
       * Draw single pixel
       */
-     //% block="tft画点 位置 x:%x|y:%y with color:%color"
-     //% x.min=1 x.max=128
-     //% y.min=1 y.max=160
+     //% block="tft画点 位置 x:%x|y:%y|color:%color"
+     //% x.min=0 x.max=127
+     //% y.min=0 y.max=159
      //% weight=95
      export function drawPixel(x: number, y: number, color: Color): void {
          setWindow(x, y, x+1, y+1)
@@ -215,7 +215,7 @@ enum Color {
      /*
       * Draw a straight line from one point to another
       */
-     //% block="tft画直线 起点位置 x0:%x0|y0:%y0 终点位置 x1:%x1|y1:%y1 颜色 color:%color"
+     //% block="tft画直线 起点位置 x0:%x0|y0:%y0 终点位置 x1:%x1|y1:%y1|color:%color"
      //% x0.min=1 x0.max=128
      //% y0.min=1 y0.max=160
      //% x1.min=1 x1.max=128
@@ -254,7 +254,7 @@ enum Color {
      /*
       * Draw rectangle with a given color
       */
-     //% block="tft画实心矩形 位置 x:%x|y:%y with width:%width|height:%height|color:%color"
+     //% block="tft画实心矩形 位置 x:%x|y:%y|width:%width|height:%height|color:%color"
      //% x.min=1 x.max=128
      //% y.min=1 y.max=160
      //% weight=90
@@ -281,7 +281,7 @@ enum Color {
      /*
       * Draw circle with a given radius
       */
-     //% block="tft画实心圆形 位置 x:%x|y:%y with radius:%r and color:%color"
+     //% block="tft画实心圆形 位置 x:%x|y:%y|radius:%r|color:%color"
      //% x.min=1 x.max=128
      //% y.min=1 y.max=160
      //% weight=88
@@ -301,7 +301,7 @@ enum Color {
      /*
       * Display string at given coordinates
       */
-      //% block="tft显示英文字符 %string 位置 x:%x and y:%y with zoom-level:%zoom color:%color and background color:%bgcolor"
+      //% block="tft显示英文字符 %string 位置 x:%x|y:%y|zoom-level:%zoom|color:%color|background color:%bgcolor"
       //% weight=97
       //% x.min=1 x.max=128
       //% y.min=1 y.max=160
