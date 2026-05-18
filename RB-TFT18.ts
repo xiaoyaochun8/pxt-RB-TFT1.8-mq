@@ -25,7 +25,7 @@ enum Color {
 /**
   * RB-TFT1.8-V2 Block
   */
-  //% color="#275C6B" icon="\uf26c" weight=95 block="RB-TFT18-V2-3"
+  //% color="#275C6B" icon="\uf26c" weight=95 block="RB-TFT18-V2-4"
  namespace RBTFT18 {
      // Display commands & constants
      let TFTWIDTH = 128
@@ -220,8 +220,8 @@ enum Color {
      //% block="tft画直线 起点位置 x0:%x0|y0:%y0 终点位置 x1:%x1|y1:%y1|color:%color"
      //% x0.min=0 x0.max=127
      //% y0.min=0 y0.max=159
-     //% x1.min=0 x1.max=127
-     //% y1.min=0 y1.max=159
+     //% x1.min=0 x1.max=127 x1.defl=10
+     //% y1.min=0 y1.max=159 y1.defl=10
      //% weight=92
      export function drawLine(x0: number, y0: number, x1: number = 10, y1: number = 10, color: Color): void {
          let xDelta = x1 - x0
