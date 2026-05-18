@@ -25,7 +25,7 @@ enum Color {
 /**
   * RB-TFT1.8-V2 Block
   */
-  //% color="#275C6B" icon="\uf26c" weight=95 block="RB-TFT18-V2-2"
+  //% color="#275C6B" icon="\uf26c" weight=95 block="RB-TFT18-V2-3"
  namespace RBTFT18 {
      // Display commands & constants
      let TFTWIDTH = 128
@@ -223,7 +223,7 @@ enum Color {
      //% x1.min=0 x1.max=127
      //% y1.min=0 y1.max=159
      //% weight=92
-     export function drawLine(x0: number, y0: number, x1: number, y1: number, color: Color): void {
+     export function drawLine(x0: number, y0: number, x1: number = 10, y1: number = 10, color: Color): void {
          let xDelta = x1 - x0
          let yDelta = y1 - y0
 
@@ -260,7 +260,7 @@ enum Color {
      //% x.min=0 x.max=127
      //% y.min=0 y.max=159
      //% weight=90
-     export function drawRectangle(x: number, y: number, width: number, height: number, color: Color): void {
+     export function drawRectangle(x: number, y: number, width: number = 10, height: number = 10, color: Color): void {
 
          // Convert color
          let hiColor = (color >> 8) % 256
@@ -287,7 +287,7 @@ enum Color {
      //% x.min=0 x.max=127
      //% y.min=0 y.max=159
      //% weight=88
-     export function drawCircle(x: number, y: number, radius: number, color: Color): void {
+     export function drawCircle(x: number, y: number, radius: number = 10, color: Color): void {
         for(let y1 = -radius ; y1 <= 0 ; y1++) {
             for(let x1 = -radius ; x1 <= 0 ; x1++) {
                 if((x1 * x1 + y1 * y1) <= (radius * radius)) {
@@ -308,7 +308,7 @@ enum Color {
       //% x.min=0 x.max=127
       //% y.min=0 y.max=159
       //% zoom.min=1 zoom.max=5
-      export function showString(text: string, x: number, y:number, zoom: number, color: Color, bgColor: Color): void {
+      export function showString(text: string, x: number, y:number, zoom: number = 1, color: Color, bgColor: Color): void {
           let hiColor = (color >> 8) % 256
           let loColor = color % 256
           let bgHiColor = (bgColor >> 8) % 256
