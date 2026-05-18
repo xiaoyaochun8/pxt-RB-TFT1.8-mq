@@ -313,7 +313,7 @@ enum Color {
       //% text.defl=abc
       //% x.min=0 x.max=127
       //% y.min=0 y.max=159
-      //% zoom.min=1 zoom.max=5 zoom.defl=10
+      //% zoom.min=1 zoom.max=5 zoom.defl=1
       //% color.defl=Color.Red
       //% weight=97
       export function showString(text: string, x: number, y:number, zoom: number = 1, color: Color, bgColor: Color): void {
