@@ -310,11 +310,12 @@ enum Color {
       * Display string at given coordinates
       */
       //% block="tft显示英文字符 %string 位置 x:%x|y:%y|zoom-level:%zoom|color:%color|background color:%bgcolor"
-      //% weight=97
+      //% text.defl=abc
       //% x.min=0 x.max=127
       //% y.min=0 y.max=159
       //% zoom.min=1 zoom.max=5 zoom.defl=10
       //% color.defl=Color.Red
+      //% weight=97
       export function showString(text: string, x: number, y:number, zoom: number = 1, color: Color, bgColor: Color): void {
           let hiColor = (color >> 8) % 256
           let loColor = color % 256
