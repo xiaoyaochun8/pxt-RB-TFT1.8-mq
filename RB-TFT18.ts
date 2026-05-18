@@ -25,7 +25,7 @@ enum Color {
 /**
   * RB-TFT1.8-V2 Block
   */
-  //% color="#275C6B" icon="\uf26c" weight=95 block="RB-TFT18-V2-1"
+  //% color="#275C6B" icon="\uf26c" weight=95 block="RB-TFT18-V2-2"
  namespace RBTFT18 {
      // Display commands & constants
      let TFTWIDTH = 128
@@ -142,7 +142,7 @@ enum Color {
      /*
       * Initial TFT setup
       */
-     //% block="tft³õÊ¼»¯Ä£¿é"
+     //% block="tftåˆå§‹åŒ–æ¨¡å—"
      //% weight=100
      export function init(): void {
          pins.setPull(DigitalPin.P9, PinPullMode.PullUp)
@@ -205,7 +205,7 @@ enum Color {
      /*
       * Draw single pixel
       */
-     //% block="tft»­µã Î»ÖÃ x:%x|y:%y|color:%color"
+     //% block="tftç”»ç‚¹ ä½ç½® x:%x|y:%y|color:%color"
      //% x.min=0 x.max=127
      //% y.min=0 y.max=159
      //% weight=95
@@ -217,7 +217,7 @@ enum Color {
      /*
       * Draw a straight line from one point to another
       */
-     //% block="tft»­Ö±Ïß ÆğµãÎ»ÖÃ x0:%x0|y0:%y0 ÖÕµãÎ»ÖÃ x1:%x1|y1:%y1|color:%color"
+     //% block="tftç”»ç›´çº¿ èµ·ç‚¹ä½ç½® x0:%x0|y0:%y0 ç»ˆç‚¹ä½ç½® x1:%x1|y1:%y1|color:%color"
      //% x0.min=0 x0.max=127
      //% y0.min=0 y0.max=159
      //% x1.min=0 x1.max=127
@@ -256,7 +256,7 @@ enum Color {
      /*
       * Draw rectangle with a given color
       */
-     //% block="tft»­ÊµĞÄ¾ØĞÎ Î»ÖÃ x:%x|y:%y|width:%width|height:%height|color:%color"
+     //% block="tftç”»å®å¿ƒçŸ©å½¢ ä½ç½® x:%x|y:%y|width:%width|height:%height|color:%color"
      //% x.min=0 x.max=127
      //% y.min=0 y.max=159
      //% weight=90
@@ -283,7 +283,7 @@ enum Color {
      /*
       * Draw circle with a given radius
       */
-     //% block="tft»­ÊµĞÄÔ²ĞÎ Î»ÖÃ x:%x|y:%y|radius:%r|color:%color"
+     //% block="tftç”»å®å¿ƒåœ†å½¢ ä½ç½® x:%x|y:%y|radius:%r|color:%color"
      //% x.min=0 x.max=127
      //% y.min=0 y.max=159
      //% weight=88
@@ -303,7 +303,7 @@ enum Color {
      /*
       * Display string at given coordinates
       */
-      //% block="tftÏÔÊ¾Ó¢ÎÄ×Ö·û %string Î»ÖÃ x:%x|y:%y|zoom-level:%zoom|color:%color|background color:%bgcolor"
+      //% block="tftæ˜¾ç¤ºè‹±æ–‡å­—ç¬¦ %string ä½ç½® x:%x|y:%y|zoom-level:%zoom|color:%color|background color:%bgcolor"
       //% weight=97
       //% x.min=0 x.max=127
       //% y.min=0 y.max=159
@@ -372,19 +372,19 @@ enum Color {
           }
       }
 
-     //% block="tftÇå¿ÕÆÁÄ»"
+     //% block="tftæ¸…ç©ºå±å¹•"
      //% weight=99
      export function clearScreen(): void {
          drawRectangle(0, 0, TFTWIDTH, TFTHEIGHT, 0)
      }
 
-     //% block="tft¹Ø±ÕÆÁÄ»"
+     //% block="tftå…³é—­å±å¹•"
      //% weight=50
      export function turnOff(): void {
          send(TFTCommands.DISPOFF, [])
      }
 
-     //% block="tft´ò¿ªÆÁÄ»"
+     //% block="tftæ‰“å¼€å±å¹•"
      //% weight=50
      export function turnOn(): void {
          send(TFTCommands.DISPON, [])
