@@ -25,7 +25,7 @@ enum Color {
 /**
   * RB-TFT1.8-V2 Block
   */
-  //% color="#275C6B" icon="\uf26c" weight=95 block="RB-TFT18-V2-5"
+  //% color="#275C6B" icon="\uf26c" weight=95 block="RB-TFT18-V2-6"
  namespace RBTFT18 {
      // Display commands & constants
      let TFTWIDTH = 128
@@ -208,6 +208,7 @@ enum Color {
      //% block="tft画点 位置 x:%x|y:%y|color:%color"
      //% x.min=0 x.max=127
      //% y.min=0 y.max=159
+     //% color.defl=Color.Red
      //% weight=95
      export function drawPixel(x: number, y: number, color: Color): void {
          setWindow(x, y, x+1, y+1)
