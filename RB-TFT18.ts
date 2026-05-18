@@ -25,7 +25,7 @@ enum Color {
 /**
   * RB-TFT1.8-V2 Block
   */
-  //% color="#275C6B" icon="\uf26c" weight=95 block="RB-TFT18-V2-6"
+  //% color="#275C6B" icon="\uf26c" weight=95 block="RB-TFT18-V2"
  namespace RBTFT18 {
      // Display commands & constants
      let TFTWIDTH = 128
@@ -223,6 +223,7 @@ enum Color {
      //% y0.min=0 y0.max=159
      //% x1.min=0 x1.max=127 x1.defl=10
      //% y1.min=0 y1.max=159 y1.defl=10
+     //% color.defl=Color.Red
      //% weight=92
      export function drawLine(x0: number, y0: number, x1: number = 10, y1: number = 10, color: Color): void {
          let xDelta = x1 - x0
@@ -261,6 +262,7 @@ enum Color {
      //% x.min=0 x.max=127
      //% y.min=0 y.max=159
      //% width.defl=10 height.defl=10
+     //% color.defl=Color.Red
      //% weight=90
      export function drawRectangle(x: number, y: number, width: number = 10, height: number = 10, color: Color): void {
 
@@ -289,6 +291,7 @@ enum Color {
      //% x.min=0 x.max=127
      //% y.min=0 y.max=159
      //% radius.defl=10
+     //% color.defl=Color.Red
      //% weight=88
      export function drawCircle(x: number, y: number, radius: number = 10, color: Color): void {
         for(let y1 = -radius ; y1 <= 0 ; y1++) {
@@ -311,6 +314,7 @@ enum Color {
       //% x.min=0 x.max=127
       //% y.min=0 y.max=159
       //% zoom.min=1 zoom.max=5 zoom.defl=10
+      //% color.defl=Color.Red
       export function showString(text: string, x: number, y:number, zoom: number = 1, color: Color, bgColor: Color): void {
           let hiColor = (color >> 8) % 256
           let loColor = color % 256
