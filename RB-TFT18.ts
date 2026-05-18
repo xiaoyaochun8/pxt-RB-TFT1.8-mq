@@ -25,7 +25,7 @@ enum Color {
 /**
   * RB-TFT1.8-V2 Block
   */
-  //% color="#275C6B" icon="\uf26c" weight=95 block="RB-TFT18-V2"
+  //% color="#275C6B" icon="\uf26c" weight=95 block="RB-TFT18-V2-1"
  namespace RBTFT18 {
      // Display commands & constants
      let TFTWIDTH = 128
@@ -142,7 +142,7 @@ enum Color {
      /*
       * Initial TFT setup
       */
-     //% block="tftåˆå§‹åŒ–æ¨¡å—"
+     //% block="tft³õÊ¼»¯Ä£¿é"
      //% weight=100
      export function init(): void {
          pins.setPull(DigitalPin.P9, PinPullMode.PullUp)
@@ -205,11 +205,11 @@ enum Color {
      /*
       * Draw single pixel
       */
-     //% block="tftç”»ç‚¹ ä½ç½® x:%x|y:%y|color:%color"
+     //% block="tft»­µã Î»ÖÃ x:%x|y:%y|color:%color"
      //% x.min=0 x.max=127
      //% y.min=0 y.max=159
      //% weight=95
-     export function drawPixel(x: number, y: number, color: Color = Color.Red): void {
+     export function drawPixel(x: number, y: number, color: Color): void {
          setWindow(x, y, x+1, y+1)
          send(TFTCommands.RAMWR, [color >> 8, color])
      }
@@ -217,13 +217,13 @@ enum Color {
      /*
       * Draw a straight line from one point to another
       */
-     //% block="tftç”»ç›´çº¿ èµ·ç‚¹ä½ç½® x0:%x0|y0:%y0 ç»ˆç‚¹ä½ç½® x1:%x1|y1:%y1|color:%color"
+     //% block="tft»­Ö±Ïß ÆğµãÎ»ÖÃ x0:%x0|y0:%y0 ÖÕµãÎ»ÖÃ x1:%x1|y1:%y1|color:%color"
      //% x0.min=0 x0.max=127
      //% y0.min=0 y0.max=159
      //% x1.min=0 x1.max=127
      //% y1.min=0 y1.max=159
      //% weight=92
-     export function drawLine(x0: number, y0: number, x1: number = 10, y1: number = 10, color: Color = Color.Red): void {
+     export function drawLine(x0: number, y0: number, x1: number, y1: number, color: Color): void {
          let xDelta = x1 - x0
          let yDelta = y1 - y0
 
@@ -256,11 +256,11 @@ enum Color {
      /*
       * Draw rectangle with a given color
       */
-     //% block="tftç”»å®å¿ƒçŸ©å½¢ ä½ç½® x:%x|y:%y|width:%width|height:%height|color:%color"
+     //% block="tft»­ÊµĞÄ¾ØĞÎ Î»ÖÃ x:%x|y:%y|width:%width|height:%height|color:%color"
      //% x.min=0 x.max=127
      //% y.min=0 y.max=159
      //% weight=90
-     export function drawRectangle(x: number, y: number, width: number = 10, height: number = 10, color: Color = Color.Red): void {
+     export function drawRectangle(x: number, y: number, width: number, height: number, color: Color): void {
 
          // Convert color
          let hiColor = (color >> 8) % 256
@@ -283,11 +283,11 @@ enum Color {
      /*
       * Draw circle with a given radius
       */
-     //% block="tftç”»å®å¿ƒåœ†å½¢ ä½ç½® x:%x|y:%y|radius:%r|color:%color"
+     //% block="tft»­ÊµĞÄÔ²ĞÎ Î»ÖÃ x:%x|y:%y|radius:%r|color:%color"
      //% x.min=0 x.max=127
      //% y.min=0 y.max=159
      //% weight=88
-     export function drawCircle(x: number, y: number, radius: number = 10, color: Color = Color.Red): void {
+     export function drawCircle(x: number, y: number, radius: number, color: Color): void {
         for(let y1 = -radius ; y1 <= 0 ; y1++) {
             for(let x1 = -radius ; x1 <= 0 ; x1++) {
                 if((x1 * x1 + y1 * y1) <= (radius * radius)) {
@@ -303,12 +303,12 @@ enum Color {
      /*
       * Display string at given coordinates
       */
-      //% block="tftæ˜¾ç¤ºè‹±æ–‡å­—ç¬¦ %string ä½ç½® x:%x|y:%y|zoom-level:%zoom|color:%color|background color:%bgcolor"
+      //% block="tftÏÔÊ¾Ó¢ÎÄ×Ö·û %string Î»ÖÃ x:%x|y:%y|zoom-level:%zoom|color:%color|background color:%bgcolor"
       //% weight=97
       //% x.min=0 x.max=127
       //% y.min=0 y.max=159
       //% zoom.min=1 zoom.max=5
-      export function showString(text: string = 'abc', x: number, y:number, zoom: number = 1, color: Color = Color.Red, bgColor: Color): void {
+      export function showString(text: string, x: number, y:number, zoom: number, color: Color, bgColor: Color): void {
           let hiColor = (color >> 8) % 256
           let loColor = color % 256
           let bgHiColor = (bgColor >> 8) % 256
@@ -372,19 +372,19 @@ enum Color {
           }
       }
 
-     //% block="tftæ¸…ç©ºå±å¹•"
+     //% block="tftÇå¿ÕÆÁÄ»"
      //% weight=99
      export function clearScreen(): void {
          drawRectangle(0, 0, TFTWIDTH, TFTHEIGHT, 0)
      }
 
-     //% block="tftå…³é—­å±å¹•"
+     //% block="tft¹Ø±ÕÆÁÄ»"
      //% weight=50
      export function turnOff(): void {
          send(TFTCommands.DISPOFF, [])
      }
 
-     //% block="tftæ‰“å¼€å±å¹•"
+     //% block="tft´ò¿ªÆÁÄ»"
      //% weight=50
      export function turnOn(): void {
          send(TFTCommands.DISPON, [])
