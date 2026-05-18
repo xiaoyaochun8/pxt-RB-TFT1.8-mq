@@ -25,7 +25,7 @@ enum Color {
 /**
   * RB-TFT1.8-V2 Block
   */
-  //% color="#275C6B" icon="\uf26c" weight=95 block="RB-TFT18-V2-4"
+  //% color="#275C6B" icon="\uf26c" weight=95 block="RB-TFT18-V2-5"
  namespace RBTFT18 {
      // Display commands & constants
      let TFTWIDTH = 128
@@ -259,6 +259,7 @@ enum Color {
      //% block="tft画实心矩形 位置 x:%x|y:%y|width:%width|height:%height|color:%color"
      //% x.min=0 x.max=127
      //% y.min=0 y.max=159
+     //% width.defl=10 height.defl=10
      //% weight=90
      export function drawRectangle(x: number, y: number, width: number = 10, height: number = 10, color: Color): void {
 
@@ -286,6 +287,7 @@ enum Color {
      //% block="tft画实心圆形 位置 x:%x|y:%y|radius:%r|color:%color"
      //% x.min=0 x.max=127
      //% y.min=0 y.max=159
+     //% radius.defl=10
      //% weight=88
      export function drawCircle(x: number, y: number, radius: number = 10, color: Color): void {
         for(let y1 = -radius ; y1 <= 0 ; y1++) {
@@ -307,7 +309,7 @@ enum Color {
       //% weight=97
       //% x.min=0 x.max=127
       //% y.min=0 y.max=159
-      //% zoom.min=1 zoom.max=5
+      //% zoom.min=1 zoom.max=5 zoom.defl=10
       export function showString(text: string, x: number, y:number, zoom: number = 1, color: Color, bgColor: Color): void {
           let hiColor = (color >> 8) % 256
           let loColor = color % 256
