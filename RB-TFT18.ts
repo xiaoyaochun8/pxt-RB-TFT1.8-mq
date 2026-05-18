@@ -288,8 +288,8 @@ enum Color {
       * Draw circle with a given radius
       */
      //% block="tft画实心圆形 位置 x:%x|y:%y|radius:%r|color:%color"
-     //% x.min=0 x.max=127
-     //% y.min=0 y.max=159
+     //% x.min=0 x.max=127 x.defl=30
+     //% y.min=0 y.max=159 y.defl=20
      //% radius.defl=10
      //% color.defl=Color.Red
      //% weight=88
